@@ -22,7 +22,7 @@ pipeline{
             }
      stage("Ansible Deploy"){
        steps{
-         sshagent (credentials: ['ansible-server']) {
+         sshagent (['ansible-server']) {
                 ansiblePlaybook(
                     credentialsId: 'ansible-server',
                     inventory: 'inventory.yml',
