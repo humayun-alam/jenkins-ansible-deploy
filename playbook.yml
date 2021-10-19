@@ -6,7 +6,7 @@
       copy:
         src: "{{ item }}"
         dest: /opt/tomcat/latest/webapps/
-        owner: halam
-        group: halam
+        owner: tomcat
+        group: tomcat
         mode: '0644'
       with_fileglob: "target/*.war"
