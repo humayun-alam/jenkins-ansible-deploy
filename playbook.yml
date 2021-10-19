@@ -4,7 +4,7 @@
   tasks:
     - name: Copy war file
       copy:
-        src: target/*.war
+        src: target/"*.war"
         dest: /tmp
         owner: halam
         group: halam
