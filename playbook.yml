@@ -2,5 +2,10 @@
 
 - hosts: all
   tasks:
-    - name: get hostname
-      command: echo $(hostname)
+    - name: Copy war file
+      copy:
+        src: target/*.war
+        dest: /tmp
+        owner: root
+        group: root
+        mode: '0644'
