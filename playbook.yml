@@ -1,0 +1,6 @@
+---
+
+- hosts: all
+  tasks:
+    - name: get hostname
+      command: echo $(hostname)

@@ -1,0 +1,24 @@
+---
+all:
+  hosts: 
+  children:
+    db:
+      hosts:
+        kvm-db1:
+        kvm-db2:
+        kvm-db3:
+        kvm-db4:
+        kvm-db-backup:
+    web:
+      hosts:
+        kvm-web001:
+        kvm-web002:
+        kvm-staging:
+        kvm-tomcat:
+    lb:
+      hosts:
+        kvm-lb001:
+        kvm-lb002:
+    local:
+      hosts:
+        127.0.0.1:
