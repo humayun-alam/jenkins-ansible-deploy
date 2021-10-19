@@ -4,9 +4,9 @@
   tasks:
     - name: Copy war file
       copy:
-        src: "target/*.war"
+        src: "{{ item }}"
         dest: /tmp
         owner: halam
         group: halam
         mode: '0644'
-#      with_fileglob: "target/*.war"
+      with_fileglob: "target/*.war"
