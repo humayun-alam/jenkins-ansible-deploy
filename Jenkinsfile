@@ -21,21 +21,9 @@ pipeline{
              }
             }
      stage("Ansible Deploy"){
-         agent {
-             label 'ansible-server'
-         }
-       steps{
-         sshagent (credentials: ['ansible-server']) {
-                ansiblePlaybook(
-                    credentialsId: 'ansible-server',
-                    inventory: 'inventory.yml',
-                    installation: 'ansible-tool',
-                    limit: 'kvm-tomcat',
-                    playbook: 'playbook.yml',
-                   
-                )
-            }
-            }
+         steps {
+             ansiblePlaybook become: true, credentialsId: 'ansible-server', disableHostKeyChecking: true, installation: 'ansible', playbook: 'playbook.yml'
+         }   
           }
         }
         
