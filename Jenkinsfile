@@ -22,9 +22,10 @@ pipeline{
             }
      stage("Ansible Deploy"){
          steps {
+             sshagent (['ansible-server']) {
              ansiblePlaybook become: true, credentialsId: 'ansible-server', disableHostKeyChecking: true, installation: 'ansible', playbook: 'playbook.yml'
-         }   
-          }
+             }
+           }   
         }
-        
     }
+}
