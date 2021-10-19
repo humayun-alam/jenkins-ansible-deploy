@@ -1,6 +1,6 @@
 ---
 
-- hosts: all
+- hosts: kvm-tomcat
   tasks:
     - name: Copy war file
       copy:
