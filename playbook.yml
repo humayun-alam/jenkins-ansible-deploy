@@ -5,7 +5,7 @@
     - name: Copy war file
       copy:
         src: "{{ item }}"
-        dest: /tmp
+        dest: /opt/tomcat/latest/webapps/
         owner: halam
         group: halam
         mode: '0644'
