@@ -17,12 +17,15 @@ pipeline{
      stage("Maven Build"){
        steps{
             sh "mvn clean package"
-//            sh "mv target/*.war target/myweb.war"
+            sh "mv target/*.war target/myweb.war"
              }
             }
      stage("Ansible Deploy"){
+         agent {
+             label 'ansible-server'
+         }
        steps{
-         sshagent (['ansible-server']) {
+         sshagent (credentials: ['ansible-server']) {
                 ansiblePlaybook(
                     credentialsId: 'ansible-server',
                     inventory: 'inventory.yml',
