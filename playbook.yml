@@ -4,8 +4,10 @@
   tasks:
     - name: Copy war file
       copy:
-        src: /workspace/ansible-deploy/target/*.war
+        src: /workspace/ansible-deploy/target/helloworld.war
         dest: /tmp
-        owner: root
-        group: root
+        owner: halam
+        group: halam
         mode: '0644'
+
+
