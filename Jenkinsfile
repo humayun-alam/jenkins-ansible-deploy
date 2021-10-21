@@ -9,7 +9,7 @@ pipeline{
   stages{
     stage("Git Checkout"){
       steps{
-          git branch: 'branch01',
+          git branch: 'main',
             credentialsId: 'github',
             url: 'https://github.com/humayun-alam/jenkins-ansible-deploy.git'
            }
