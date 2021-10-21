@@ -21,7 +21,7 @@ pipeline{
             }
      stage("Ansible Deploy"){
          steps {
-             ansiblePlaybook become: true, credentialsId: 'ansible-server', disableHostKeyChecking: true, playbook: 'playbook.yml', inventory: 'inventory.yml'
+             ansiblePlaybook become: true, credentialsId: 'ansible-server', disableHostKeyChecking: true, playbook: 'site.yml', inventory: 'inventory.yml'
            }
         }
     }
