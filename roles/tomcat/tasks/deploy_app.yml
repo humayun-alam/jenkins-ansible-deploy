@@ -1,4 +1,4 @@
 ---
 - name: Deploy the new WAR file to target servers
   
-  copy: src=/tmp/helloworld.war dest=/opt/tomcat/latest/webapps/
+  copy: src=/workspace/ansible-deploy/target/helloworld.war dest=/opt/tomcat/latest/webapps/
