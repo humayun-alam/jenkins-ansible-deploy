@@ -1,0 +1,4 @@
+---
+
+tomcat_user: war-deployer
+tomcat_pwd: jenkins

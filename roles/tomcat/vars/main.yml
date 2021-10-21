@@ -1,0 +1,5 @@
+---
+
+tomcat_user: war-deployer
+tomcat_pwd: jenkins
+ip_address: 192.168.1.80
