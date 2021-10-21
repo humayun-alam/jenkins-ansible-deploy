@@ -1,0 +1,4 @@
+---
+
+- name: Start application on {{ansible_hostname}}
+  command: wget "http://{{tomcat_user}}:{{tomcat_pwd}}@{{ip_address}}:8080/manager/text/start?path=/helloworld" -O - -q
